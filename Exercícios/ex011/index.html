@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem dinâmica</h1>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador</p>
+
+    <picture> <!--OBSERVAÇÃO: AS TAGS SOURCE TÊM QUE VIR NA SEQUÊNCIA MENOR PRO MAIOR!-->
+        <source media="(max-width: 750px)" srcset="Imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="Imagens/foto-m.png" type="image/png">
+        <img src="Imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1> <!--OBSERVAÇÃO: Precisa dos parâmetros controls pra abrir a caixinha de reprodução e autoplay para tocar desde o carregamento-->
+    <p>Vamos aprender a reproduzir áudios em HTML5</p>
+    <!--<audio src="midia/running_errands.mp3" controls autoplay></audio> Aqui não funcionou bem no Chrome!-->
+    <audio preload="metadata" autoplay controls> <!--Use o preload=metadata ou none para evitar que o site só carregue por completo quando carregar o arquivo MP3 e use o loop pra que a música fique tocando eternamente (não recomendado)--> <!--OBSERVAÇÃO: AS TAGS SOURCE TÊM QUE VIR NA SEQUÊNCIA do que você quer mostrar primeiro pro que você quer mostrar por último!-->
+        <source src="midia/running_errands.mp3" type="audio/mpeg"> <!--Tenta carregar primeiro o MP3-->
+        <source src="midia/running_errands.ogg" type="audio/ogg"> <!--Se não der, tenta carregar o OGG-->
+        <source src="midia/running_errands.wav" type="audio/wav"> <!--Se não der também, tenta carregar o WAV-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio.<br> <!--Se não carregou nenhum, dá mensagem de erro-->
+            <a href="midia/running_errands.mp3">Clique aqui para baixar o arquivo MP3</a>
+        </p>
+    </audio>
+</body>
+</html>
